@@ -3,8 +3,9 @@
 
 #include <vector>
 #include <string>
-#include "chatbot.h"
+#include <memory>
 
+#include "chatbot.h"
 
 // forward declarations
 class GraphEdge;
@@ -41,8 +42,8 @@ public:
     void AddEdgeToParentNode(GraphEdge *edge);
     void AddEdgeToChildNode(std::unique_ptr<GraphEdge> edge);
 
-    void MoveChatbotHere(ChatBot *chatbot);
-    void MoveChatbotToNewNode(GraphNode newNode);
+    void MoveChatbotHere(ChatBot chatbot);
+    void MoveChatbotToNewNode(GraphNode *newNode);
 };
 
 #endif /* GRAPHNODE_H_ */
